@@ -39,6 +39,12 @@ When 'I update the round details' do
   click_on 'Update'
 end
 
+When 'I delete the round details' do
+  visit '/rounds'
+  click_link 'round_1'
+  click_link 'Delete'
+end
+
 Then 'I should see the rounds' do
   expect(page).to have_content('round_1')
   expect(page).to have_content('round_2 description')
@@ -55,4 +61,9 @@ end
 
 Then 'I should see the updated round' do
   expect(page.body).to have_content('Updated Description')
+end
+
+Then 'I should see the round has been deleted' do
+  expect(page).to have_no_content('round_1')
+  expect(page).to have_content('Round was successfully destroyed')
 end

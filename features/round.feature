@@ -25,3 +25,8 @@ Feature: dealing with rounds
     And I update the round details
     Then I should see the updated round
 
+  Scenario: Delete a round
+    When I visit the edit page for a round
+    And I delete the round details
+    Then I should see the round has been deleted
+
