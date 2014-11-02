@@ -1,2 +1,2 @@
-rvm use --install --create ruby-2.1.1@aws
+rvm use --install --create ruby-2.1.4@aws
 bundle -v > /dev/null || gem install bundler

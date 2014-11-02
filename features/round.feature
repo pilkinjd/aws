@@ -8,7 +8,6 @@ Feature: dealing with rounds
     When I visit the rounds page
     Then I should see the rounds
 
-    @wip
   Scenario: new round
     When I visit the rounds page
     And I click on the new round button

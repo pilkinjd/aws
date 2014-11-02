@@ -31,5 +31,5 @@ Then 'I should see the rounds' do
 end
 
 Then 'I should see the new round' do
-  expect(page).to have_content('Round was successfully created.')
+  expect(page.body).to have_content('New Round')
 end
