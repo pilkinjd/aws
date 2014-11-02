@@ -14,3 +14,14 @@ Feature: dealing with rounds
 
     When I complete the new round form
     Then I should see the new round
+
+  Scenario: Show round
+    When I visit the rounds page
+    And I click on the round name
+    Then I should see the show page for the round
+
+  Scenario: Edit a round
+    When I visit the edit page for a round
+    And I update the round details
+    Then I should see the updated round
+

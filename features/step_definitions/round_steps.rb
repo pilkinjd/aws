@@ -15,6 +15,16 @@ When 'I click on the new round button' do
   click_on 'New'
 end
 
+When "I click on the round name" do
+  click_link 'round_1'
+end
+
+When "I visit the edit page for a round" do
+  visit '/rounds'
+  click_link 'round_1'
+  click_link 'Edit'
+end
+
 When 'I complete the new round form' do
   fill_in('Name', with: "New Round")
   fill_in('Description', with: "The Description")
@@ -22,6 +32,11 @@ When 'I complete the new round form' do
   select('9, 7, 5, 3, 1', from: "Scoring")
   select('Yes', from: 'Official')
   click_on('Create Round')
+end
+
+When 'I update the round details' do
+  fill_in('Description', with: "Updated Description")
+  click_on 'Update'
 end
 
 Then 'I should see the rounds' do
@@ -32,4 +47,12 @@ end
 
 Then 'I should see the new round' do
   expect(page.body).to have_content('New Round')
+end
+
+Then "I should see the show page for the round" do
+  expect(page.body).to have_content('round_1 description')
+end
+
+Then 'I should see the updated round' do
+  expect(page.body).to have_content('Updated Description')
 end
