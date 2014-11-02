@@ -1,0 +1,17 @@
+<%= simple_form_for @round, :html => { :class => "form-horizontal" } do |f| %>
+
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :arrows, as: :string %>
+      <%= f.input :scoring, collection: [["10, 9, 8, 7, 6...", 10], ["9, 7, 5, 3, 1", 9],["5, 4, 3, 2, 1", 5]] %>
+      <%= f.input :indoor_outdoor, collection: [["Indoor", 'Indoor'], ["Outdoor", 'Outdoor'], ["Outdoor Metric", 'Outdoor Metric']] %>
+      <%= f.input :order_id, as: :string %>
+      <%= f.input :on_card, as: :select %>
+      <%= f.input :official, as: :select %>
+      <%= f.input :group_letter %>
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            rounds_path, :class => 'btn btn-default' %>
+
+<% end %>

@@ -1,0 +1,17 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+  Exclude:
+    - 'db/**/*'
+
+Metrics/LineLength:
+  Max: 150
+  AllowURI: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/PredicateName:
+  NamePrefixBlacklist:
+    - get_
+    - set_

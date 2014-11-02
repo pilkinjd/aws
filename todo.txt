@@ -1,0 +1,6 @@
+make displaying tick/cross a helper
+scoring select helper
+display scoring values as text
+sort rounds by indoor/outdoor then order
+max score for round
+is over max_score for round
